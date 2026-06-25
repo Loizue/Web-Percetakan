@@ -1,0 +1,243 @@
+/* ============================================
+   sections.css — Section-Specific Design &
+                  Decorative / Visual Styles
+   ============================================ */
+
+/* ── HERO: GRID BACKGROUND ── */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 194, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 194, 255, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── HERO: REGISTRATION MARKS ── */
+.reg-marks {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.reg-mark {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  opacity: 0.18;
+}
+
+/* Each mark rendered via box-shadow + pseudo-element cross */
+.reg-mark::before,
+.reg-mark::after {
+  content: '';
+  position: absolute;
+  background: white;
+}
+
+.reg-mark::before {
+  width: 1.5px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.reg-mark::after {
+  height: 1.5px;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Circle via outline */
+.reg-mark {
+  border: 1.5px solid white;
+  border-radius: 50%;
+}
+
+/* Positions */
+.rm-tl { top: 88px; left: 40px; }
+.rm-tr { top: 88px; right: 40px; }
+.rm-bl { bottom: 60px; left: 40px; }
+.rm-br { bottom: 60px; right: 40px; }
+
+/* ── HERO: TYPOGRAPHY ── */
+.hero-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 1.6rem;
+}
+
+.eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--magenta);
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -2px;
+  margin-bottom: 1.6rem;
+}
+
+/* "Printed-on" double-exposure effect on line 2 */
+.hero h1 .line1 { color: var(--white); }
+
+.hero h1 .line2 {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--cyan);
+  position: relative;
+}
+
+.hero h1 .line2::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--magenta);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.hero h1 .line3 { color: var(--white); }
+
+.hero > .hero-content > p {
+  font-size: 1.1rem;
+  color: var(--gray);
+  max-width: 520px;
+  margin-bottom: 2.4rem;
+}
+
+/* ── HERO STATS ── */
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.stat-num span {
+  color: var(--cyan);
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: var(--gray);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 0.2rem;
+}
+
+/* ── MARQUEE ── */
+.marquee-bar {
+  background: var(--cyan);
+  color: var(--navy);
+  padding: 0.7rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-inner {
+  display: inline-block;
+  animation: marquee 22s linear infinite;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.marquee-inner span {
+  margin: 0 2rem;
+  opacity: 0.5;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── SERVICES SECTION ── */
+.services {
+  background: var(--navy-mid);
+}
+
+/* ── HOW IT WORKS ── */
+.how {
+  background: var(--navy);
+}
+
+/* ── WHY US ── */
+.why {
+  background: var(--navy-mid);
+}
+
+.why-text .section-title {
+  max-width: 420px;
+}
+
+/* ── TESTIMONIALS ── */
+.testimonials {
+  background: var(--navy);
+}
+
+/* ── CTA SECTION ── */
+.cta-section {
+  background: linear-gradient(135deg, #0a1520 0%, #0D1B2A 50%, #091420 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Radial glow behind CTA */
+.cta-section::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 194, 255, 0.08) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.cta-section h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  letter-spacing: -1px;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.cta-section p {
+  color: var(--gray);
+  font-size: 1rem;
+  max-width: 440px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--navy-dark);
+  padding: 3rem 6vw 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}

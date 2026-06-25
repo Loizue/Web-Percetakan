@@ -1,0 +1,348 @@
+/* ============================================
+   components.css — Reusable UI Components
+   ============================================ */
+
+/* ── LOGO ── */
+.logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: var(--cyan);
+}
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-normal), background var(--transition-normal);
+  text-decoration: none;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--cyan);
+  color: var(--navy);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 194, 255, 0.35);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+}
+
+.btn-ghost:hover {
+  border-color: var(--white);
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(13, 27, 42, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.nav-links a {
+  color: var(--gray);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color var(--transition-normal);
+}
+
+.nav-links a:hover {
+  color: var(--white);
+}
+
+.nav-cta {
+  background: var(--cyan);
+  color: var(--navy) !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius-md);
+  font-weight: 700 !important;
+  transition: background var(--transition-normal) !important;
+}
+
+.nav-cta:hover {
+  background: #33cfff;
+  color: var(--navy) !important;
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.3rem;
+  color: var(--white);
+}
+
+/* ── SECTION LABELS & TITLES ── */
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--magenta);
+  margin-bottom: 0.8rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.section-sub {
+  color: var(--gray);
+  max-width: 480px;
+  line-height: 1.7;
+  font-size: 0.97rem;
+}
+
+/* ── SERVICE CARD ── */
+.service-card {
+  background: var(--navy-mid);
+  padding: 2.2rem 2rem;
+  transition: background var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  background: #1a2d44;
+}
+
+.service-card:hover .service-icon {
+  color: var(--cyan);
+}
+
+.service-icon {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  transition: color var(--transition-normal);
+  color: var(--gray);
+  display: block;
+}
+
+.service-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.service-desc {
+  font-size: 0.88rem;
+  color: var(--gray);
+  line-height: 1.65;
+}
+
+.service-tag {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  border: 1px solid rgba(0, 194, 255, 0.3);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+/* ── STEP ── */
+.step {
+  padding-left: 1rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  transition: border-color var(--transition-normal);
+}
+
+.step:hover {
+  border-left-color: var(--cyan);
+}
+
+.step-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: rgba(0, 194, 255, 0.15);
+  line-height: 1;
+  margin-bottom: 0.8rem;
+}
+
+.step-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.step-desc {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.65;
+}
+
+/* ── CMYK SQUARES ── */
+.cmyk-square {
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.2rem;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  min-height: 140px;
+}
+
+.sq-c { background: #00B4D8; color: rgba(0, 0, 0, 0.5); }
+.sq-m { background: #FF2D78; color: rgba(255, 255, 255, 0.6); }
+.sq-y { background: #FFD600; color: rgba(0, 0, 0, 0.5); }
+.sq-k {
+  background: #1a1a1a;
+  color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ── WHY CHECK ── */
+.why-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(0, 194, 255, 0.12);
+  color: var(--cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.why-item-text {
+  font-size: 0.92rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+.why-item-text strong {
+  color: var(--white);
+}
+
+/* ── TESTIMONIAL CARD ── */
+.testimonial-card {
+  background: var(--navy-mid);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+}
+
+.stars {
+  color: var(--yellow);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.testimonial-text {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.author-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+
+.author-name {
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.author-role {
+  font-size: 0.75rem;
+  color: var(--gray);
+}
+
+/* ── BADGE ── */
+.badge {
+  padding: 0.25rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+}
+
+/* ── FOOTER LINKS ── */
+.footer-links h4 {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.footer-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links a {
+  color: var(--gray);
+  font-size: 0.85rem;
+  transition: color var(--transition-normal);
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
+.footer-brand p {
+  color: var(--gray);
+  font-size: 0.85rem;
+  line-height: 1.65;
+  max-width: 260px;
+  margin-top: 0.6rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1.5rem;
+  font-size: 0.78rem;
+  color: var(--gray);
+}

@@ -1,0 +1,217 @@
+/* ============================================
+   layout.css — Grid, Flex, Section Structure
+   ============================================ */
+
+/* ── SECTION BASE ── */
+.section {
+  padding: var(--section-padding);
+}
+
+/* ── SECTION HEADER ── */
+.section-header {
+  margin-bottom: 3.5rem;
+}
+
+/* ── SERVICES GRID ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1.5px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ── STEPS GRID ── */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+
+/* ── WHY SECTION LAYOUT ── */
+.why {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  padding: var(--section-padding);
+}
+
+.why-visual {
+  position: relative;
+  aspect-ratio: 1;
+  max-width: 420px;
+}
+
+.cmyk-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  height: 100%;
+}
+
+/* ── TESTIMONIALS GRID ── */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+/* ── CTA ACTIONS ── */
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* ── HERO ACTIONS ── */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ── HERO STATS ── */
+.hero-stats {
+  display: flex;
+  gap: 3rem;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+}
+
+/* ── FOOTER LAYOUT ── */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-badge {
+  display: flex;
+  gap: 1rem;
+}
+
+/* ── WHY LIST ── */
+.why-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.why-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* ── TESTIMONIAL AUTHOR ── */
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* ── NAVBAR LAYOUT ── */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 6vw;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.2rem;
+}
+
+/* ── HERO LAYOUT ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10rem 6vw 6rem;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+}
+
+/* ── HERO EYEBROW ── */
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--navy-mid);
+    padding: 1.5rem 6vw;
+    gap: 1.2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    z-index: 99;
+  }
+
+  .nav-toggle {
+    display: block !important;
+  }
+
+  .why {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .why-visual {
+    max-width: 100%;
+  }
+
+  .hero-stats {
+    gap: 1.5rem;
+  }
+
+  .steps {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+}
